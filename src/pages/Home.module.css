@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50%;
+}
+
+.profilePic {
+  border: 3px solid #a89984;
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 25px;
+  padding: 3%;
+}
+
+.aboutMe > p {
+  margin: 10px 0px;
+}
+
+@media (min-width: 950px) {
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aboutMe {
+    max-width: 50%;
+  }
+}

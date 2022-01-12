@@ -1,9 +1,22 @@
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
 .navbar {
   display: flex;
   justify-content: space-around;
+}
+
+.navbarLink {
+  color: #a89984;
+  font-size: 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.navbarLink:hover {
+  text-decoration: underline;
 }
