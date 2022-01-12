@@ -6,7 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Need to add logic to flip this when header button is clicked */
-  background-color: lightblue;
 }
 
 code {
