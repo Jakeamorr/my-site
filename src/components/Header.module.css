@@ -10,7 +10,6 @@
 }
 
 .navbarLink {
-  color: #a89984;
   font-size: 2rem;
   border-radius: 5px;
   text-decoration: none;
@@ -19,4 +18,14 @@
 
 .navbarLink:hover {
   text-decoration: underline;
+}
+
+.navbarLink__dark {
+  composes: navbarLink;
+  color: var(--fg_dark);
+}
+
+.navbarLink__light {
+  composes: navbarLink;
+  color: var(--fg_light);
 }

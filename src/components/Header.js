@@ -5,19 +5,25 @@ import styleSheet from "./Header.module.css";
 import { ThemeContext } from "../contexts/themeContext";
 
 export default function Header() {
-  const { toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const getLinkClass = () => {
+    return theme === "light"
+      ? styleSheet.navbarLink__light
+      : styleSheet.navbarLink__dark;
+  };
+
   return (
     <div className={styleSheet.header}>
       <span></span>
       <nav className={styleSheet.navbar}>
-        <Link to="/" className={styleSheet.navbarLink}>
-          Home
-        </Link>
-        <Link to="about" className={styleSheet.navbarLink}>
+        <Link to="/" className={getLinkClass()}>
           About
         </Link>
-        <Link to="projects" className={styleSheet.navbarLink}>
+        <Link to="projects" className={getLinkClass()}>
           Projects
+        </Link>
+        <Link to="resume" className={getLinkClass()}>
+          Resume
         </Link>
       </nav>
       <button onClick={toggleTheme}>Toggle</button>
