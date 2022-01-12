@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import styleSheet from "./Header.module.css";
 import { ThemeContext } from "../contexts/themeContext";
-import Resume from "../images/resume.pdf";
 
 export default function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -23,9 +22,9 @@ export default function Header() {
         <Link to="projects" className={getLinkClass()}>
           Projects
         </Link>
-        <a href={Resume} target="_blank" className={getLinkClass()}>
+        <Link to="resume" className={getLinkClass()}>
           Resume
-        </a>
+        </Link>
       </nav>
       <button onClick={toggleTheme}>Toggle</button>
     </div>

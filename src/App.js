@@ -6,6 +6,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
+import Resume from "./pages/Resume";
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -16,6 +17,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="projects" element={<Projects />} />
+        <Route path="resume" element={<Resume />} />
       </Routes>
     </div>
   );
