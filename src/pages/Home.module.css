@@ -3,14 +3,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 50%;
+  min-height: 60%;
 }
 
 .profilePic {
-  border: 3px solid #a89984;
+  border-width: 3px;
+  border-style: solid;
   border-radius: 50%;
   max-width: 100%;
   max-height: 300px;
+}
+
+.profilePic__dark {
+  composes: profilePic;
+  border-color: var(--fg_dark);
+}
+
+.profilePic__light {
+  composes: profilePic;
+  border-color: var(--fg_light);
 }
 
 .aboutMe {
@@ -18,7 +29,8 @@
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  line-height: 25px;
+  font-size: 1.5rem;
+  line-height: 40px;
   padding: 3%;
 }
 

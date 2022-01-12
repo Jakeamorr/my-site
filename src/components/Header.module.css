@@ -11,9 +11,10 @@
 
 .navbarLink {
   font-size: 2rem;
+  font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
-  margin-right: 20px;
+  margin: 0px 25px;
 }
 
 .navbarLink:hover {
