@@ -1,0 +1,21 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+}
+
+.projectName {
+  text-decoration: none;
+  color: inherit;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+.projectName:hover {
+  text-decoration: underline;
+}
+
+.projectDescription {
+  text-align: left;
+}
