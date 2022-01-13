@@ -35,11 +35,12 @@
 .toggleDark {
   display: flex;
   align-items: center;
-  background-color: white;
+  background-color: lightgrey;
   border-radius: 5px;
   width: 50px;
   height: 25px;
   margin-right: 2%;
+  cursor: pointer;
 }
 
 .toggleLight {

@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 import styleSheet from "./Header.module.css";
 import { ThemeContext } from "../contexts/themeContext";
 import Resume from "../images/resume.pdf";
+import moonIcon from "../images/moon-line.png";
+import sunIcon from "../images/sun-line.png";
 
 export default function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  const [toggleIconClass, setToggleIconClass] = useState(styleSheet.darkIcon);
-  const [toggleContainerClass, setToggleContainerClass] = useState(
-    styleSheet.toggleDark
-  );
 
   const getLinkClass = () => {
     return theme === "light"
@@ -18,14 +16,9 @@ export default function Header() {
       : styleSheet.navbarLink__dark;
   };
 
-  useEffect(() => {
-    setToggleIconClass(
-      theme === "light" ? styleSheet.lightIcon : styleSheet.darkIcon
-    );
-    setToggleContainerClass(
-      theme === "light" ? styleSheet.toggleLight : styleSheet.toggleDark
-    );
-  }, [theme]);
+  function setToggleContainerClass() {
+    return theme === "light" ? styleSheet.toggleLight : styleSheet.toggleDark;
+  }
 
   return (
     <div className={styleSheet.header}>
@@ -37,12 +30,21 @@ export default function Header() {
         <Link to="projects" className={getLinkClass()}>
           Projects
         </Link>
-        <a href={Resume} target="_blank" className={getLinkClass()}>
+        <a
+          href={Resume}
+          target="_blank"
+          rel="noreferrer"
+          className={getLinkClass()}
+        >
           Resume
         </a>
       </nav>
-      <div onClick={toggleTheme} className={toggleContainerClass}>
-        <div className={toggleIconClass}></div>
+      <div onClick={toggleTheme} className={setToggleContainerClass()}>
+        {theme === "light" ? (
+          <img src={sunIcon} alt="sun" />
+        ) : (
+          <img src={moonIcon} alt="moon" />
+        )}
       </div>
     </div>
   );

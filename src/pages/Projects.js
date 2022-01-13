@@ -21,6 +21,7 @@ export default function Projects() {
   ));
 
   return (
+    // TODO: need to handle the fact that the array starts empty and therefore breifly displays the empty message on load
     <div className={styleSheet.projects}>
       {projectElements.length > 0 ? (
         projectElements
