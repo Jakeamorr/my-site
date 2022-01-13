@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import styleSheet from "./Header.module.css";
