@@ -22,7 +22,7 @@ export default function Projects() {
 
   return (
     <div className={styleSheet.projects}>
-      {repos.length > 0 ? (
+      {projectElements.length > 0 ? (
         projectElements
       ) : (
         <h1>Looks like there is an issue connecting to Github! D:</h1>

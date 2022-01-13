@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 
 import styleSheet from "./Header.module.css";
@@ -7,11 +7,25 @@ import Resume from "../images/resume.pdf";
 
 export default function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
+  const [toggleIconClass, setToggleIconClass] = useState(styleSheet.darkIcon);
+  const [toggleContainerClass, setToggleContainerClass] = useState(
+    styleSheet.toggleDark
+  );
+
   const getLinkClass = () => {
     return theme === "light"
       ? styleSheet.navbarLink__light
       : styleSheet.navbarLink__dark;
   };
+
+  useEffect(() => {
+    setToggleIconClass(
+      theme === "light" ? styleSheet.lightIcon : styleSheet.darkIcon
+    );
+    setToggleContainerClass(
+      theme === "light" ? styleSheet.toggleLight : styleSheet.toggleDark
+    );
+  }, [theme]);
 
   return (
     <div className={styleSheet.header}>
@@ -27,7 +41,9 @@ export default function Header() {
           Resume
         </a>
       </nav>
-      <button onClick={toggleTheme}>Toggle</button>
+      <div onClick={toggleTheme} className={toggleContainerClass}>
+        <div className={toggleIconClass}></div>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem;
 }
 
@@ -29,4 +30,32 @@
 .navbarLink__light {
   composes: navbarLink;
   color: var(--fg_light);
+}
+
+.toggleDark {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  width: 50px;
+  height: 25px;
+  margin-right: 2%;
+}
+
+.toggleLight {
+  composes: toggleDark;
+  justify-content: flex-end;
+}
+
+.darkIcon {
+  background-color: var(--bg_dark);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin: 3px;
+}
+
+.lightIcon {
+  composes: darkIcon;
+  background-color: var(--bg_light);
 }
