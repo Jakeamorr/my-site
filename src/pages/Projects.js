@@ -4,11 +4,15 @@ import styleSheet from "./Projects.module.css";
 
 export default function Projects() {
   const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("https://api.github.com/users/Jakeamorr/repos")
       .then((res) => res.json())
-      .then((data) => setRepos(data));
+      .then((data) => {
+        setRepos(data);
+        setLoading(false);
+      });
   }, []);
 
   const projectElements = repos.map((repo) => (
@@ -21,13 +25,14 @@ export default function Projects() {
   ));
 
   return (
-    // TODO: need to handle the fact that the array starts empty and therefore breifly displays the empty message on load
     <div className={styleSheet.projects}>
-      {projectElements.length > 0 ? (
-        projectElements
-      ) : (
-        <h1>Looks like there is an issue connecting to Github! D:</h1>
-      )}
+      {projectElements.length > 0 && projectElements}
+      {
+        // This checks to make sure we have finsihed trying to fetch the data before displaying the error message
+        !loading && projectElements.length === 0 && (
+          <h1>Looks like there is an issue connecting to Github! D:</h1>
+        )
+      }
     </div>
   );
 }
