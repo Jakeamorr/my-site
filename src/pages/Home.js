@@ -19,16 +19,10 @@ export default function Home() {
         <div className={styleSheet.aboutMe}>
           <p>Hey, my name is Jake</p>
           <p>
-            I am currently exploring the vast world of bits and bytes in search
-            of a more meaningful path in programming. I work predominately as a
+            I am currently exploring the vast world of bits and bytes. I work predominantly as a
             front-end developer but I have interest and experience in other
-            areas such as: machine learning, hardware, and IOT.
-          </p>
-          <p>
-            I am currently exploring the vast world of bits and bytes in search
-            of a more meaningful path in programming. I work predominately as a
-            front-end developer but I have interest and experience in other
-            areas such as: machine learning, hardware, and IOT.
+            areas such as: machine learning, hardware, and IOT. Feel free to check out any of my 
+            projects, resume, or blog posts, if I ever get around to writting some.
           </p>
         </div>
       </div>
